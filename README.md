@@ -1,6 +1,6 @@
 # 📖 Bible Ref
 
-A quick Bible reference tool built with [Next.js](https://nextjs.org/).
+A quick Bible reference tool built with [Next.js](https://nextjs.org/) and [API.Bible](https://scripture.api.bible/).
 
 ## Requirements
 

@@ -1,0 +1,19 @@
+@use '../../styles/grid' as *;
+
+.footer {
+    display: flex;
+    align-items: center;
+}
+
+.footer_inner {
+    width: 100%;
+    max-width: $max-width;
+    padding: $s-md $grid-padding;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer_text {
+    font-size: 0.9375rem;
+    margin: 1em 0;
+}

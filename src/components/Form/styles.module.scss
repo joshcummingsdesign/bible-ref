@@ -1,0 +1,49 @@
+@use '../../styles/borders' as *;
+@use '../../styles/colors' as *;
+
+.form {
+    display: flex;
+
+    input:not([type="submit"]) {
+        -webkit-appearance: none;
+        color: $black;
+        border: 1px solid $light-grey;
+        border-radius: $br-sm;
+        padding: 0.4em 0.5em;
+        max-width: 100%;
+        background: $white;
+        outline: none;
+        font-size: 1.0625rem;
+        line-height: 1.6;
+        width: 100%;
+
+        &::placeholder {
+            color: $grey;
+        }
+
+        &:focus {
+            border-color: $purple;
+            box-shadow: 0 5px 15px -7px rgba($black, 0.1);
+        }
+    }
+
+    input[type="submit"] {
+        border-radius: 3px;
+        background: $light-grey;
+        color: $black;
+        padding: 0.4em 1em;
+        border: 1px solid $light-grey;
+        display: inline-block;
+        cursor: pointer;
+        transition: box-shadow 0.2s ease-in-out;
+        font-family: inherit;
+        font-size: 1.0625rem;
+        line-height: 1.6;
+        margin-left: 0.625em;
+
+        &:hover,
+        &:focus {
+            box-shadow: 0 15px 25px -7px rgba($black, 0.1);
+        }
+    }
+}

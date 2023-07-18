@@ -1,0 +1,15 @@
+@use '../../styles/grid' as *;
+
+.content {
+    padding: $s-md 0;
+
+    p {
+        margin: $s-md 0;
+    }
+
+    @for $i from 1 through 6 {
+        h#{$i} {
+            margin: $s-md 0;
+        }
+    }
+}

@@ -4,6 +4,16 @@
 .form {
     display: flex;
 
+    &.is_loading {
+        .spinner {
+            display: block;
+        }
+
+        input[type="submit"] {
+            color: $light-grey;
+        }
+    }
+
     input:not([type="submit"]) {
         -webkit-appearance: none;
         color: $black;
@@ -39,11 +49,23 @@
         font-family: inherit;
         font-size: 1.0625rem;
         line-height: 1.6;
-        margin-left: 0.625em;
 
         &:hover,
         &:focus {
             box-shadow: 0 15px 25px -7px rgba($black, 0.1);
         }
     }
+}
+
+.submit_wrap {
+    position: relative;
+    margin-left: 0.625em;
+}
+
+.spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
 }

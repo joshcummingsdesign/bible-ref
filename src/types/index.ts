@@ -1,2 +1,2 @@
 export * from './Book';
-export * from './Reference';
+export * from './Passage';

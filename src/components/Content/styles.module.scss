@@ -1,10 +1,17 @@
+@use '../../styles/fonts' as *;
 @use '../../styles/grid' as *;
 
 .content {
     padding: $s-md 0;
 
-    p {
+    p :global {
         margin: $s-md 0;
+
+        .v {
+            vertical-align: super;
+            font-size: 0.75rem;
+            font-weight: $fw-bold;
+        }
     }
 
     @for $i from 1 through 6 {

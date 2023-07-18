@@ -1,11 +1,11 @@
+import {BOOKS} from '@/helpers/books';
 import {Book} from '@/types';
 
-const BOOKS = {
-    JHN: 'John',
-};
-
-export const getBookFromId = (bookId: string): Book | null => {
-    const matches = bookId.match(/([A-Z]*)\.?([0-9]*)?/);
+/**
+ * Parse the book title and chapter from the book ID.
+ */
+export const parseBookId = (bookId: string): Book | null => {
+    const matches = bookId.match(/([0-9A-Z]*)\.?([0-9]*)?/);
 
     if (matches && matches.length > 2) {
         return {

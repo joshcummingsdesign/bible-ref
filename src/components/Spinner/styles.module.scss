@@ -1,0 +1,11 @@
+@use '../../styles/animations' as *;
+
+.spinner {
+    transform-origin: center;
+    animation: 0.75s infinite linear;
+    @include keyframes {
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+}

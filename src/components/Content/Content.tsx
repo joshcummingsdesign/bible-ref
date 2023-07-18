@@ -1,18 +1,24 @@
+import {parseBookId} from '@/helpers/parseBookId';
+import {Passage} from '@/types';
 import styles from './styles.module.scss';
-import {Reference} from '@/types';
-import {getBookFromId} from '@/helpers/getBookFromId';
 
 interface Props {
-    references: Reference[];
+    passages: Passage[] | null;
 }
 
-export const Content = ({references}: Props) => (
+export const Content = ({passages}: Props) => (
     <section className={styles.content}>
-        {references.map((reference, i) => (
-            <div key={reference.id}>
-                <h2>{getBookFromId(reference.bookId)!.title}</h2>
-                <div key={reference.id} dangerouslySetInnerHTML={{__html: reference.content}} />
-            </div>
-        ))}
+        {passages === null ? (
+            <p>No passages found.</p>
+        ) : (
+            <>
+                {passages.map((passage, i) => (
+                    <div key={passage.id}>
+                        <h2>{parseBookId(passage.bookId)!.title}</h2>
+                        <div key={passage.id} dangerouslySetInnerHTML={{__html: passage.content}} />
+                    </div>
+                ))}
+            </>
+        )}
     </section>
 );

@@ -1,4 +1,4 @@
-export interface Reference {
+export interface Passage {
     id: string;
     orgId: string;
     bibleId: string;

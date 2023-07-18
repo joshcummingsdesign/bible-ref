@@ -1,5 +1,5 @@
-import {combineClassNames as css} from '@/helpers/combineClassNames';
 import {DM_Serif_Display, Red_Hat_Display} from 'next/font/google';
+import {combineClassNames as css} from '@/lib/utils/combineClassNames';
 import './global.scss';
 
 const fontHeading = DM_Serif_Display({

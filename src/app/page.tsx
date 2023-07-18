@@ -3,9 +3,9 @@ import {Content} from '@/components/Content';
 import {Footer} from '@/components/Footer';
 import {Form} from '@/components/Form';
 import {Header} from '@/components/Header';
-import {getPassages} from '@/helpers/getPassages';
+import {api} from '@/lib/api';
+import {parseBookId} from '@/lib/utils/parseBookId';
 import styles from './styles.module.scss';
-import {parseBookId} from '@/helpers/parseBookId';
 
 interface Props {
     searchParams?: Record<'search', string>;
@@ -13,7 +13,7 @@ interface Props {
 
 export default async function Page({searchParams}: Props) {
     const query = searchParams && searchParams.search;
-    const passages = query ? await getPassages(query) : null;
+    const passages = query ? await api.getPassages(query) : null;
 
     return (
         <div className={styles.wrapper}>
@@ -31,7 +31,7 @@ export default async function Page({searchParams}: Props) {
 
 export async function generateMetadata({searchParams}: Props): Promise<Metadata> {
     const query = searchParams && searchParams.search;
-    const passages = query ? await getPassages(query) : null;
+    const passages = query ? await api.getPassages(query) : null;
     const title = passages ? parseBookId(passages[0].bookId)!.title : null;
 
     return {

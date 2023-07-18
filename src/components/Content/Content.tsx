@@ -1,5 +1,5 @@
-import {parseBookId} from '@/helpers/parseBookId';
-import {Passage} from '@/types';
+import {Passage} from '@/lib/types';
+import {parseBookId} from '@/lib/utils/parseBookId';
 import styles from './styles.module.scss';
 
 interface Props {
@@ -15,7 +15,7 @@ export const Content = ({passages}: Props) => (
                 {passages.map((passage, i) => (
                     <div key={passage.id}>
                         <h2>{parseBookId(passage.bookId)!.title}</h2>
-                        <div key={passage.id} dangerouslySetInnerHTML={{__html: passage.content}} />
+                        <div dangerouslySetInnerHTML={{__html: passage.content}} />
                     </div>
                 ))}
             </>

@@ -1,5 +1,5 @@
-import {BOOKS} from '@/helpers/books';
-import {Book} from '@/types';
+import {Book} from '@/lib/types';
+import {BOOKS} from '@/lib/utils/constants';
 
 /**
  * Parse the book title and chapter from the book ID.

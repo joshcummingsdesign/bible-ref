@@ -2,7 +2,7 @@
 import {useCallback, useEffect, useState} from 'react';
 import {useRouter, useSearchParams} from 'next/navigation';
 import {Spinner} from '@/components/Spinner';
-import {combineClassNames as css} from '@/helpers/combineClassNames';
+import {combineClassNames as css} from '@/lib/utils/combineClassNames';
 import styles from './styles.module.scss';
 
 interface Props {
@@ -12,6 +12,7 @@ interface Props {
 
 export const Form = ({className, initialValue}: Props) => {
     const router = useRouter();
+
     const searchParams = useSearchParams();
 
     const [isLoading, setIsLoading] = useState<boolean>(false);

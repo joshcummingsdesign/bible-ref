@@ -8,7 +8,7 @@ interface Props {
 
 export const Content = ({passages}: Props) => (
     <section className={styles.content}>
-        {passages === null ? (
+        {passages === null || !passages.length ? (
             <p>No passages found.</p>
         ) : (
             <>

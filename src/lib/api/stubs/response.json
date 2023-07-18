@@ -1,0 +1,16 @@
+[
+    {
+        "id": "JHN.1.50-JHN.2.2",
+        "orgId": "JHN.1.50-JHN.2.2",
+        "bibleId": "de4e12af7f28f599-01",
+        "bookId": "JHN",
+        "chapterIds": [
+            "JHN.1",
+            "JHN.2"
+        ],
+        "reference": "John 1:50-2:2",
+        "content": "<p class=\"p\"><span data-number=\"50\" data-sid=\"JHN 1:50\" class=\"v\">50</span>¶ This is verse 1:50, <span class=\"wj\">lorem ipsum.</span> <span data-number=\"51\" data-sid=\"JHN 1:51\" class=\"v\">51</span>This is verse 1:51, <span class=\"wj\">dolor sit amet.</span></p><p class=\"p\"><span data-number=\"1\" data-sid=\"JHN 2:1\" class=\"v\">1</span>This is verse 2:1 <span data-number=\"2\" data-sid=\"JHN 2:2\" class=\"v\">2</span>some placeholder text. </p>",
+        "verseCount": 4,
+        "copyright": "PUBLIC DOMAIN except in the United Kingdom, where a Crown Copyright applies to printing the KJV. See http://www.cambridge.org/about-us/who-we-are/queens-printers-patent"
+    }
+]

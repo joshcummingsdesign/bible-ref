@@ -50,24 +50,27 @@ export const Form = ({className, initialValue}: Props) => {
 
         const query = searchParams.get('search');
 
-        if (query) {
-            setValue(query);
-        }
+        setValue(query || '');
 
         setChanged(true);
     }, [searchParams]);
 
     return (
-        <form className={css(className, styles.form, isLoading && styles.is_loading)} onSubmit={handleFormSubmit}>
+        <form
+            data-testid="form"
+            className={css(className, styles.form, isLoading && styles.is_loading)}
+            onSubmit={handleFormSubmit}
+        >
             <input
+                data-testid="search-input"
                 type="search"
                 placeholder="Search the Bible"
                 value={!changed && initialValue ? initialValue : value}
                 onChange={handleInputChange}
             />
             <div className={styles.submit_wrap}>
-                <input type="submit" value="Search" disabled={isLoading} />
-                <Spinner className={styles.spinner} />
+                <input data-testid="search-submit" type="submit" value="Search" disabled={isLoading} />
+                {isLoading && <Spinner testId="spinner" className={styles.spinner} />}
             </div>
         </form>
     );

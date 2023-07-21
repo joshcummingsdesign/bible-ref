@@ -1,10 +1,12 @@
 @use '../../styles/animations' as *;
 
 .spinner {
+    width: 24px;
+    height: 24px;
     transform-origin: center;
     animation: 0.75s infinite linear;
     @include keyframes {
-        100% {
+        to {
             transform: rotate(360deg);
         }
     }

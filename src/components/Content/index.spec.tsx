@@ -25,7 +25,8 @@ it('should show passages', () => {
     const title = screen.getByRole('heading', {level: 2});
     const headings = screen.getAllByRole('heading', {level: 3});
 
-    expect(title).toHaveTextContent('John');
-    expect(headings[0]).toHaveTextContent('John 1');
-    expect(headings[1]).toHaveTextContent('John 2');
+    expect(title).toHaveTextContent('Psalms');
+    expect(headings[0]).toHaveTextContent('Psalm 1');
+    expect(headings[1]).toHaveTextContent('Psalm 2');
+    expect(headings[2]).toHaveTextContent('Psalm 3');
 });

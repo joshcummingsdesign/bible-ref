@@ -4,13 +4,62 @@
 .content {
     padding: $s-md 0;
 
-    p :global {
+    p {
         margin: $s-md 0;
+    }
 
-        .v {
-            vertical-align: super;
-            font-size: 0.75rem;
-            font-weight: $fw-bold;
+    // Section headings
+    [class~="s1"],
+    [class~="s2"] {
+        font-weight: bold;
+    }
+
+    // Section titles
+    [class~="d"] {
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 0.8125rem;
+        font-style: italic;
+        margin-top: -20px;
+        font-weight: $fw-bold;
+    }
+
+    // Verse numbers
+    [class~="v"] {
+        vertical-align: super;
+        font-size: 0.75rem;
+        font-weight: $fw-bold;
+    }
+
+    // References
+    [class~="r"] {
+        display: none;
+    }
+
+    // Poetry
+    [class~="q0"], // odd
+    [class~="q1"] { // even
+        margin-top: -20px;
+        margin-left: 20px;
+    }
+
+    [class~="q1"] { // even
+        margin-left: 40px;
+    }
+
+    // Selah
+    [class~="qr"] {
+        text-align: right;
+        float: right;
+        margin-top: -57.25px;
+        font-style: italic;
+    }
+
+    // First line of poetry
+    h3,
+    p:not([class^="q"]) {
+        & + [class^="q"] {
+            margin-top: $s-md;
         }
     }
 

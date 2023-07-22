@@ -2,6 +2,7 @@ export interface Passage {
     id: string;
     orgId: string;
     bibleId: string;
+    bibleName: string;
     bookId: string;
     chapterIds: string[];
     reference: string;

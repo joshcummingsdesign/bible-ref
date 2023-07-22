@@ -5,14 +5,14 @@ import './global.scss';
 const fontHeading = DM_Serif_Display({
     variable: '--font-heading',
     weight: ['400'],
-    style: ['normal', 'italic'],
+    style: ['normal'],
     subsets: ['latin'],
 });
 
 const fontMain = Red_Hat_Display({
     variable: '--font-main',
     weight: ['400', '700'],
-    style: ['normal'],
+    style: ['normal', 'italic'],
     subsets: ['latin'],
 });
 

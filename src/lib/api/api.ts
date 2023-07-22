@@ -31,7 +31,7 @@ class ApiService {
      * Query example: `John 1:1, ASV`
      */
     public async getPassages(query: string): Promise<Passage[] | null> {
-        const {encodedQuery, bibleId} = parseSearchQuery(query);
+        const {encodedQuery, bibleId, bibleName} = parseSearchQuery(query);
 
         // Fail silently
         if (!encodedQuery || !bibleId) return null;
@@ -49,6 +49,7 @@ class ApiService {
         return json.data.passages.map((passage: Passage) => {
             return {
                 ...passage,
+                bibleName,
                 content: transformPassage(passage.chapterIds, passage.content),
             };
         });

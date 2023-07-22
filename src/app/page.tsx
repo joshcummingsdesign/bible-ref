@@ -6,6 +6,7 @@ import {Header} from '@/components/Header';
 import {api} from '@/lib/api';
 import {parseBookId} from '@/lib/utils/parseBookId';
 import styles from './styles.module.scss';
+import {TRANSLATIONS} from '@/lib/utils/constants';
 
 interface Props {
     searchParams?: Record<'search', string>;
@@ -14,6 +15,7 @@ interface Props {
 export default async function Page({searchParams}: Props) {
     const query = searchParams && searchParams.search;
     const passages = query ? await api.getPassages(query) : null;
+    const copyright = passages ? TRANSLATIONS[passages[0].bibleName as keyof typeof TRANSLATIONS].copyright : null;
 
     return (
         <div className={styles.wrapper}>
@@ -24,7 +26,7 @@ export default async function Page({searchParams}: Props) {
                     {query && <Content passages={passages} />}
                 </main>
             </div>
-            <Footer />
+            <Footer copyright={copyright} />
         </div>
     );
 }

@@ -1,43 +1,65 @@
+import {JSDOM} from 'jsdom';
 import {parseBookId} from '@/lib/utils/parseBookId';
 
 /**
  * Add chapter headings and filter out unwanted characters.
  */
 export const transformPassage = (chapterIds: string[], content: string): string => {
-    let index = 0;
-    let prevNum = parseBookId(chapterIds[0])!.chapter;
-    const sep = '<p class="p"><span data-number="';
-
-    let paragraphs = content.split(sep);
-
-    if (paragraphs[0] === '') {
-        paragraphs = paragraphs.slice(1);
-    }
-
-    const transformedContent = paragraphs.reduce((acc, val, i) => {
-        const matches = val.match(/data-sid="[0-9]?[A-Z]*\s([0-9]*)/);
-        const num = matches && matches.length > 1 ? Number(matches[1]) : prevNum;
-
-        if (i === 0) {
-            const book = parseBookId(chapterIds[index])!;
-            const text = `<h3>${book.title} ${book.chapter}</h3>${sep}${val}`;
-            index++;
-            return text;
-        }
-
-        if (num !== prevNum) {
-            const book = parseBookId(chapterIds[index])!;
-            const text = `${acc}<h3>${book.title} ${book.chapter}</h3>${sep}${val}`;
-            index++;
-            prevNum = num;
-            return text;
-        }
-
-        return `${acc}${sep}${val}`;
-    }, '');
-
-    return transformedContent
-        .replaceAll(/<span data-number="1"[^>]*>1<\/span>/g, '')
+    // Strip content
+    const strippedContent = content
+        // Remove empty p tags
+        .replaceAll(/<p [^>]*class="b"><\/p>/g, '')
+        // Remove numbers from q tags
+        // Remove paragraph symbol
         .replaceAll('¶', '')
+        // Remove space after line number
         .replaceAll(/(?<=[0-9]+)<\/span>\s/g, '</span>');
+
+    // Get DOM nodes
+    const nodes = new JSDOM(`<!DOCTYPE html>${strippedContent}`).window.document.body.childNodes;
+    const paragraphs = Array.from(nodes) as HTMLElement[];
+
+    let index = 0;
+    let chapterIndex = 0;
+    let quoteIndex = 0;
+    let prevChapter: string | null = null;
+
+    return paragraphs
+        .reduce((acc: string[], p) => {
+            const doc = new JSDOM('<!DOCTYPE html>').window.document;
+            const body = doc.body;
+            const sid = p.innerHTML && p.innerHTML.match(/data-sid="[0-9]?[A-Z]+\s([0-9]+):[0-9]+"/);
+            const chapter = sid && sid.length >= 2 ? sid[1] : prevChapter;
+
+            // Replace q tag numbers
+            if (p.className.split(' ').some((className) => className.match(/q[0-9]/))) {
+                p.className = p.className.replace(/q[0-9]/, `q${quoteIndex % 2}`);
+                quoteIndex++;
+            } else {
+                quoteIndex = 0;
+            }
+
+            // Add h3 headings
+            if (chapter !== prevChapter) {
+                let i = index;
+                const book = parseBookId(chapterIds[chapterIndex], true)!;
+
+                if (acc.length >= 2 && acc[index - 2].match(/class="(s[0-9]|d)"/)) {
+                    i = index - 2;
+                } else if (acc.length >= 1 && acc[index - 1].match(/class="(s[0-9]|d)"/)) {
+                    i = index - 1;
+                }
+
+                acc.splice(i, 0, `<h3>${book.title} ${book.chapter}</h3>`);
+                index++;
+                chapterIndex++;
+                prevChapter = chapter;
+            }
+
+            body.appendChild(p);
+            acc.push(body.innerHTML);
+            index++;
+            return acc;
+        }, [])
+        .join('');
 };

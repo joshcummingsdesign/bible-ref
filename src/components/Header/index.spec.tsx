@@ -5,7 +5,9 @@ import {Header} from './Header';
 it('should have brand link', () => {
     render(<Header />);
 
-    const brand = screen.getByText('Bible Ref');
+    const link = screen.getByTestId('nav-link');
+    const heading = screen.getByTestId('nav-heading');
 
-    expect(brand).toHaveAttribute('href', '/');
+    expect(link).toHaveAttribute('href', '/');
+    expect(heading).toHaveTextContent('Bible Ref');
 });

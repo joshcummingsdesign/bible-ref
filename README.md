@@ -62,6 +62,7 @@ Gen 1:1, ASV
 
 ## Supported Translations
 
-* American Standard Version
-* King James Version (default)
-* Literal Standard Version
+* American Standard Version (ASV)
+* Berean Standard Bible (BSB)
+* King James Version (KJV) (default)
+* Literal Standard Version (LSV)

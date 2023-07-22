@@ -31,8 +31,8 @@ export const transformPassage = (chapterIds: string[], content: string): string 
             const sid = p.innerHTML && p.innerHTML.match(/data-sid="[0-9]?[A-Z]+\s([0-9]+):[0-9]+"/);
             const chapter = sid && sid.length >= 2 ? sid[1] : prevChapter;
 
-            // Replace q tag numbers
-            if (p.className.split(' ').some((className) => className.match(/q[0-9]/))) {
+            // Replace q tag numbers with 0 and 1 alternating for poetry indents
+            if (p.className.match(/q[0-9]/)) {
                 p.className = p.className.replace(/q[0-9]/, `q${quoteIndex % 2}`);
                 quoteIndex++;
             } else {

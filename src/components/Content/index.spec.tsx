@@ -20,13 +20,6 @@ it('should handle empty passages', () => {
 });
 
 it('should show passages', () => {
-    render(<Content passages={expected} />);
-
-    const title = screen.getByRole('heading', {level: 2});
-    const headings = screen.getAllByRole('heading', {level: 3});
-
-    expect(title).toHaveTextContent('Psalms');
-    expect(headings[0]).toHaveTextContent('Psalm 1');
-    expect(headings[1]).toHaveTextContent('Psalm 2');
-    expect(headings[2]).toHaveTextContent('Psalm 3');
+    const view = render(<Content passages={expected} />);
+    expect(view).toMatchSnapshot();
 });

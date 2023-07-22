@@ -3,7 +3,7 @@ import {BOOKS, TRANSLATIONS} from '@/lib/utils/constants';
 /**
  * Parse the search query.
  *
- * If no translation is passed, the `bibleId` is set to KJV.
+ * If no translation is passed, the default is set to KJV.
  */
 export const parseSearchQuery = (query: string): {encodedQuery?: string; bibleId?: string; bibleName: string} => {
     const parts = query.toUpperCase().split(',');
@@ -16,9 +16,11 @@ export const parseSearchQuery = (query: string): {encodedQuery?: string; bibleId
         encodedQuery = book ? encodeURI(`${book} ${matches[3]}`) : undefined;
     }
 
+    const bibleName = parts[1] ? parts[1].trim() : 'KJV'; // Default to KJV
+
     return {
         encodedQuery,
-        bibleId: parts[1] ? TRANSLATIONS[parts[1].trim() as keyof typeof TRANSLATIONS].id : TRANSLATIONS.KJV.id,
-        bibleName: parts[1] ? parts[1].trim() : 'KJV',
+        bibleName,
+        bibleId: TRANSLATIONS[bibleName as keyof typeof TRANSLATIONS].id,
     };
 };

@@ -9,3 +9,11 @@ it('should have copyright text', () => {
 
     expect(copyright).toBeInTheDocument();
 });
+
+it('should accept copyright prop', () => {
+    render(<Footer copyright="Hello World" />);
+
+    const copyright = screen.getByText('Hello World');
+
+    expect(copyright).toBeInTheDocument();
+});

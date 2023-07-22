@@ -1,0 +1,348 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should show passages 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <section
+        class="content"
+      >
+        <div>
+          <h2>
+            Psalms
+          </h2>
+          <div>
+            <h3>
+              Psalm 1
+            </h3>
+            <p
+              class="s1"
+            >
+              Heading 1
+            </p>
+            <p
+              class="p"
+            >
+              <span
+                class="v"
+                data-sid="PSA 1:1"
+              >
+                1
+              </span>
+              Verse 1:1
+            </p>
+            <h3>
+              Psalm 2
+            </h3>
+            <p
+              class="s2"
+            >
+              Heading 2
+            </p>
+            <p
+              class="d"
+            >
+              Description 1
+            </p>
+            <p
+              class="p"
+            >
+              <span
+                class="v"
+                data-sid="PSA 2:18"
+              >
+                18
+              </span>
+              Verse 2:18
+            </p>
+            <p
+              class="p"
+            >
+              <span
+                class="v"
+                data-sid="PSA 2:19"
+              >
+                19
+              </span>
+              Verse 2:19
+            </p>
+            <h3>
+              Psalm 3
+            </h3>
+            <p
+              class="p"
+            >
+              <span
+                class="v"
+                data-sid="PSA 3:24"
+              >
+                24
+              </span>
+              Verse 3:24
+            </p>
+            <p
+              class="p"
+            >
+              <span
+                class="v"
+                data-sid="PSA 3:25"
+              >
+                25
+              </span>
+              Verse 3:25
+            </p>
+            <p
+              class="p"
+            >
+              <span
+                class="v"
+                data-sid="PSA 3:26"
+              >
+                26
+              </span>
+              Verse 3:26
+            </p>
+            <h3>
+              Psalm 4
+            </h3>
+            <p
+              class="d"
+            >
+              Description 2
+            </p>
+            <p
+              class="p"
+            >
+              <span
+                class="v"
+                data-sid="PSA 4:3"
+              >
+                3
+              </span>
+              Verse 4:3
+            </p>
+            <p
+              class="q0"
+            >
+              <span
+                class="v"
+                data-sid="PSA 4:4"
+              >
+                4
+              </span>
+              Verse 4:4
+            </p>
+            <p
+              class="q1"
+            >
+              <span
+                class="v"
+                data-sid="PSA 4:5"
+              >
+                5
+              </span>
+              Verse 4:5
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>,
+  "container": <div>
+    <section
+      class="content"
+    >
+      <div>
+        <h2>
+          Psalms
+        </h2>
+        <div>
+          <h3>
+            Psalm 1
+          </h3>
+          <p
+            class="s1"
+          >
+            Heading 1
+          </p>
+          <p
+            class="p"
+          >
+            <span
+              class="v"
+              data-sid="PSA 1:1"
+            >
+              1
+            </span>
+            Verse 1:1
+          </p>
+          <h3>
+            Psalm 2
+          </h3>
+          <p
+            class="s2"
+          >
+            Heading 2
+          </p>
+          <p
+            class="d"
+          >
+            Description 1
+          </p>
+          <p
+            class="p"
+          >
+            <span
+              class="v"
+              data-sid="PSA 2:18"
+            >
+              18
+            </span>
+            Verse 2:18
+          </p>
+          <p
+            class="p"
+          >
+            <span
+              class="v"
+              data-sid="PSA 2:19"
+            >
+              19
+            </span>
+            Verse 2:19
+          </p>
+          <h3>
+            Psalm 3
+          </h3>
+          <p
+            class="p"
+          >
+            <span
+              class="v"
+              data-sid="PSA 3:24"
+            >
+              24
+            </span>
+            Verse 3:24
+          </p>
+          <p
+            class="p"
+          >
+            <span
+              class="v"
+              data-sid="PSA 3:25"
+            >
+              25
+            </span>
+            Verse 3:25
+          </p>
+          <p
+            class="p"
+          >
+            <span
+              class="v"
+              data-sid="PSA 3:26"
+            >
+              26
+            </span>
+            Verse 3:26
+          </p>
+          <h3>
+            Psalm 4
+          </h3>
+          <p
+            class="d"
+          >
+            Description 2
+          </p>
+          <p
+            class="p"
+          >
+            <span
+              class="v"
+              data-sid="PSA 4:3"
+            >
+              3
+            </span>
+            Verse 4:3
+          </p>
+          <p
+            class="q0"
+          >
+            <span
+              class="v"
+              data-sid="PSA 4:4"
+            >
+              4
+            </span>
+            Verse 4:4
+          </p>
+          <p
+            class="q1"
+          >
+            <span
+              class="v"
+              data-sid="PSA 4:5"
+            >
+              5
+            </span>
+            Verse 4:5
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

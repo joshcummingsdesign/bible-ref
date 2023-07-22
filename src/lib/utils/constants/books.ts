@@ -102,6 +102,7 @@ export const BOOKS = {
     JHN: 'John',
     JOHN: 'John',
     ACT: 'Acts',
+    ACTS: 'Acts',
     ROM: 'Romans',
     ROMANS: 'Romans',
     '1CO': '1 Corinthians',

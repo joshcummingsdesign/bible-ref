@@ -11,9 +11,9 @@ export const transformPassage = (chapterIds: string[], content: string): string 
         .replaceAll(/<p [^>]*class="b">[^>]*<\/p>/g, '')
         // Remove r tags
         .replaceAll(/<p [^>]*class="r">.*?<\/p>/g, '')
-        // Remove paragraph symbol
+        // Remove paragraph symbols
         .replaceAll('¶', '')
-        // Remove space after line number
+        // Remove space after line numbers
         .replaceAll(/(?<=[0-9]+)<\/span>\s/g, '</span>');
 
     // Get DOM nodes

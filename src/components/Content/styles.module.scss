@@ -10,7 +10,9 @@
 
     // Section headings
     [class~="s1"],
-    [class~="s2"] {
+    [class~="s2"],
+    [class~="ms"],
+    [class~="mr"] {
         font-weight: bold;
     }
 
@@ -44,10 +46,15 @@
 
     // Selah
     [class~="qr"] {
-        text-align: right;
-        float: right;
-        margin-top: -57.25px;
+        margin-top: -20px;
+        text-align: center;
         font-style: italic;
+
+        @media (min-width: 575px) {
+            text-align: right;
+            float: right;
+            margin-top: -57.25px;
+        }
     }
 
     // First line of poetry

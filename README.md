@@ -65,4 +65,3 @@ Gen 1:1, ASV
 * American Standard Version (ASV)
 * Berean Standard Bible (BSB) (default)
 * King James Version (KJV)
-* Literal Standard Version (LSV)

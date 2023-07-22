@@ -14,9 +14,4 @@ export const TRANSLATIONS = {
         name: 'King James Version',
         copyright: 'King James Version - Public Domain',
     },
-    LSV: {
-        id: '01b29f4b342acc35-01',
-        name: 'Literal Standard Version',
-        copyright: 'Literal Standard Version - © Covenant Press and the Covenant Christian Coalition',
-    },
 };

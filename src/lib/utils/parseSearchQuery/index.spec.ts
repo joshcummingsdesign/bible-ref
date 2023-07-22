@@ -43,4 +43,8 @@ test('should parse the search query', () => {
         bibleId: 'bba9f40183526463-01',
         bibleName: 'BSB',
     });
+
+    expect(parseSearchQuery('acts 3, bssb')).toEqual({
+        encodedQuery: 'Acts%203',
+    });
 });

@@ -7,9 +7,10 @@ import {parseBookId} from '@/lib/utils/parseBookId';
 export const transformPassage = (chapterIds: string[], content: string): string => {
     // Strip content
     const strippedContent = content
-        // Remove empty p tags
-        .replaceAll(/<p [^>]*class="b"><\/p>/g, '')
-        // Remove numbers from q tags
+        // Remove b tags
+        .replaceAll(/<p [^>]*class="b">[^>]*<\/p>/g, '')
+        // Remove r tags
+        .replaceAll(/<p [^>]*class="r">.*?<\/p>/g, '')
         // Remove paragraph symbol
         .replaceAll('¶', '')
         // Remove space after line number

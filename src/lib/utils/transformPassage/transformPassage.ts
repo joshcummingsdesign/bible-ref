@@ -14,7 +14,9 @@ export const transformPassage = (chapterIds: string[], content: string): string 
         // Remove paragraph symbols
         .replaceAll('¶', '')
         // Remove space after line numbers
-        .replaceAll(/(?<=[0-9]+)<\/span>\s/g, '</span>');
+        .replaceAll(/(?<=[0-9]+)<\/span>\s/g, '</span>')
+        // Remove space before punctuation
+        .replaceAll(/\s(?=[;,?.!])/g, '');
 
     // Get DOM nodes
     const nodes = new JSDOM(`<!DOCTYPE html>${strippedContent}`).window.document.body.childNodes;

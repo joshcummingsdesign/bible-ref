@@ -26,7 +26,7 @@ class ApiService {
     /**
      * Get passages by search query.
      *
-     * Translation defaults to KJV.
+     * Translation defaults to BSB.
      *
      * Query example: `John 1:1, ASV`
      */

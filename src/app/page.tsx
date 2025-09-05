@@ -9,11 +9,12 @@ import styles from './styles.module.scss';
 import {TRANSLATIONS} from '@/lib/utils/constants';
 
 interface Props {
-    searchParams?: Record<'search', string>;
+    searchParams?: Promise<Record<'search', string>>;
 }
 
 export default async function Page({searchParams}: Props) {
-    const query = searchParams && searchParams.search;
+    const params = await searchParams;
+    const query = typeof params?.search === 'string' ? params.search : undefined;
     const passages = query ? await api.getPassages(query) : null;
     const copyright = passages ? TRANSLATIONS[passages[0].bibleName as keyof typeof TRANSLATIONS].copyright : null;
 
@@ -32,7 +33,8 @@ export default async function Page({searchParams}: Props) {
 }
 
 export async function generateMetadata({searchParams}: Props): Promise<Metadata> {
-    const query = searchParams && searchParams.search;
+    const params = await searchParams;
+    const query = typeof params?.search === 'string' ? params.search : undefined;
     const passages = query ? await api.getPassages(query) : null;
     const title = passages ? parseBookId(passages[0].bookId)!.title : null;
 

@@ -1,6 +1,8 @@
+@use 'sass:string';
+
 // Keyframes with unique ID
 @mixin keyframes {
-    $animation-name: unique-id();
+    $animation-name: string.unique-id();
     animation-name: $animation-name;
     @keyframes #{$animation-name} {
         @content;
